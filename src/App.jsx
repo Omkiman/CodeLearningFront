@@ -20,11 +20,11 @@ function App() {
   useEffect(() => {
     // Initialize socket
     const socket = io('https://codelearningback.onrender.com/', {
-      transports: ['polling'],  // Start with polling only
+      transports: ['websocket', 'polling'],
       reconnection: true,
-      reconnectionAttempts: 5,
+      reconnectionAttempts: 3,
       reconnectionDelay: 1000,
-      timeout: 20000
+      timeout: 10000  
     });
     socketRef.current = socket;
 
