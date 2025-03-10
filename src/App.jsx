@@ -19,7 +19,13 @@ function App() {
   // Setup socket connection
   useEffect(() => {
     // Initialize socket
-    const socket = io('https://codelearningback.onrender.com');
+    const socket = io('https://your-backend-url.onrender.com', {
+      transports: ['polling', 'websocket'],
+      reconnection: true,
+      reconnectionAttempts: 5,
+      reconnectionDelay: 1000,
+      timeout: 20000
+    });
     socketRef.current = socket;
 
     // Listen for active rooms updates
