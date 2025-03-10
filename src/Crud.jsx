@@ -22,7 +22,7 @@ function Crud({ darkMode }) {
   const fetchCodeBlocks = async () => {
     try {
       setLoading(true);
-      const response = await fetch('https://codelearningback.onrender.com/api/codeblocks/admin');
+      const response = await fetch('codelearningback-production.up.railway.app/api/codeblocks/admin');
       
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -89,14 +89,14 @@ function Crud({ darkMode }) {
       
       if (editingId) {
         // Update existing code block
-        response = await fetch(`https://codelearningback.onrender.com/api/codeblocks/${editingId}`, {
+        response = await fetch(`codelearningback-production.up.railway.app/api/codeblocks/${editingId}`, {
           method: 'PUT',
           headers: headers,
           body: JSON.stringify(formData)
         });
       } else {
         // Create new code block
-        response = await fetch('https://codelearningback.onrender.com/api/codeblocks', {
+        response = await fetch('codelearningback-production.up.railway.app/api/codeblocks', {
           method: 'POST',
           headers: headers,
           body: JSON.stringify(formData)
@@ -153,7 +153,7 @@ function Crud({ darkMode }) {
     setError(null);
     
     try {
-      const response = await fetch(`https://codelearningback.onrender.com/api/codeblocks/${id}`, {
+      const response = await fetch(`codelearningback-production.up.railway.app/api/codeblocks/${id}`, {
         method: 'DELETE'
       });
       

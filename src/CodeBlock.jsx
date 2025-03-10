@@ -26,7 +26,7 @@ function CodeBlock() {
 
   useEffect(() => {
     // Fetch the initial code block data
-    fetch(`https://codelearningback.onrender.com/api/codeblocks/${id}`)
+    fetch(`codelearningback-production.up.railway.app/api/codeblocks/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setCode(data.template);
@@ -36,7 +36,7 @@ function CodeBlock() {
       .catch((err) => console.error(err));
 
     // Initialize socket
-    const socket = io('https://codelearningback.onrender.com');
+    const socket = io('codelearningback-production.up.railway.app');
     socketRef.current = socket;
 
     // Join the room

@@ -19,7 +19,7 @@ function App() {
   // Setup socket connection
   useEffect(() => {
     // Initialize socket
-    const socket = io('https://codelearningback.onrender.com/', {
+    const socket = io('codelearningback-production.up.railway.app', {
       transports: ['websocket', 'polling'],
       reconnection: true,
       reconnectionAttempts: 3,

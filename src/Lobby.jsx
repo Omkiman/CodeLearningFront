@@ -5,7 +5,7 @@ function Lobby() {
   const [codeblocks, setCodeblocks] = useState([]);
 
   useEffect(() => {
-    fetch('https://codelearningback.onrender.com/api/codeblocks')
+    fetch('codelearningback-production.up.railway.app/api/codeblocks')
       .then(res => res.json())
       .then(data => setCodeblocks(data))
       .catch(err => console.error(err));
