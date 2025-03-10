@@ -19,8 +19,8 @@ function App() {
   // Setup socket connection
   useEffect(() => {
     // Initialize socket
-    const socket = io('https://your-backend-url.onrender.com', {
-      transports: ['polling', 'websocket'],
+    const socket = io('https://codelearningback.onrender.com/', {
+      transports: ['polling'],  // Start with polling only
       reconnection: true,
       reconnectionAttempts: 5,
       reconnectionDelay: 1000,
