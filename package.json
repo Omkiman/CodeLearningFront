@@ -4,13 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
+  "start": "node server.js",
+  "dev": "vite", 
+  "build": "vite build",
+  "preview": "vite preview"
+
+},
   "dependencies": {
     "codemirror": "^5.65.18",
+    "express": "^4.21.2",
     "jshint": "^2.13.6",
     "react": "^18.2.0",
     "react-codemirror2": "^8.0.1",
