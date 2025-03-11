@@ -43,9 +43,13 @@ function CodeBlock() {
       reconnectionAttempts: 5,
       reconnectionDelay: 1000,
       timeout: 20000,
-      withCredentials: false
+      withCredentials: false,
+      forceNew: false,           
+      upgrade: true,            
+      rememberUpgrade: true,    
+      perMessageDeflate: true
     });
-    
+
     socketRef.current = socket;
 
     // Join the room
