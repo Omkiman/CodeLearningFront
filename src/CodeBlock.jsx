@@ -37,7 +37,15 @@ function CodeBlock() {
       .catch((err) => console.error(err));
 
     // Initialize socket
-    const socket = io(apiUrl);
+    const socket = io(apiUrl, {
+      transports: ['websocket', 'polling'],
+      reconnection: true,
+      reconnectionAttempts: 5,
+      reconnectionDelay: 1000,
+      timeout: 20000,
+      withCredentials: false
+    });
+    
     socketRef.current = socket;
 
     // Join the room

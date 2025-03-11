@@ -20,13 +20,16 @@ function App() {
   // Setup socket connection
   useEffect(() => {
     // Initialize socket
+
     const socket = io(apiUrl, {
       transports: ['websocket', 'polling'],
       reconnection: true,
-      reconnectionAttempts: 3,
+      reconnectionAttempts: 5,
       reconnectionDelay: 1000,
-      timeout: 10000  
+      timeout: 20000,
+      withCredentials: false
     });
+
     socketRef.current = socket;
 
     // Listen for active rooms updates
