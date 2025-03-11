@@ -23,10 +23,11 @@ function CodeBlock() {
 
   // Socket ref
   const socketRef = useRef(null);
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     // Fetch the initial code block data
-    fetch(`codelearningback-production.up.railway.app/api/codeblocks/${id}`)
+    fetch(`${apiUrl}/api/codeblocks/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setCode(data.template);
@@ -36,7 +37,7 @@ function CodeBlock() {
       .catch((err) => console.error(err));
 
     // Initialize socket
-    const socket = io('codelearningback-production.up.railway.app');
+    const socket = io(apiUrl);
     socketRef.current = socket;
 
     // Join the room

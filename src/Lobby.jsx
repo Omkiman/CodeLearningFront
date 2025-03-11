@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 
 function Lobby() {
   const [codeblocks, setCodeblocks] = useState([]);
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
-    fetch('codelearningback-production.up.railway.app/api/codeblocks')
+    fetch(`${apiUrl}/api/codeblocks`)
       .then(res => res.json())
       .then(data => setCodeblocks(data))
       .catch(err => console.error(err));

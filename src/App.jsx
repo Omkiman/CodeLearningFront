@@ -10,16 +10,17 @@ function App() {
   const [darkMode, setDarkMode] = useState(true);
   const [openBlocks, setOpenBlocks] = useState([]);
   const socketRef = useRef(null);
-
+  const apiUrl = import.meta.env.VITE_API_URL;
   // Apply dark-mode class to the <body>
   useEffect(() => {
     document.body.className = darkMode ? 'bg-dark text-light' : 'bg-light text-dark';
   }, [darkMode]);
 
+  
   // Setup socket connection
   useEffect(() => {
     // Initialize socket
-    const socket = io('codelearningback-production.up.railway.app', {
+    const socket = io(apiUrl, {
       transports: ['websocket', 'polling'],
       reconnection: true,
       reconnectionAttempts: 3,
