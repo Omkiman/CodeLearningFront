@@ -23,7 +23,7 @@ function Toolbar({ darkMode, onToggleDarkMode, openBlocks }) {
       {/* Logo */}
       <Link className="navbar-brand" to="/">
         <img
-          src="https://img.artiversehub.ai/online/2024/12/13/f63e2cb6-a2eb-47d3-a28a-8b6500326215_04726383.png"
+          src="https://i.ibb.co/7JdVJFxC/Adobe-Express-filess.png"
           alt="Logo"
           style={{ width: '50px', height: '50px', marginRight: '10px' }}
         />
