@@ -19,8 +19,6 @@ function App() {
   
   // Setup socket connection
   useEffect(() => {
-    // Initialize socket
-
     const socket = io(apiUrl, {
       transports: ['websocket', 'polling'],
       reconnection: true,
